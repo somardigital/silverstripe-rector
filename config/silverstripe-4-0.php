@@ -10,19 +10,19 @@ use Rector\Transform\ValueObject\ParentClassToTraits;
 return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->rule(EnsureTableNameIsSetRector::class);
 
-    //pre 4.0
-    $object_traits = [
-        'SilverStripe\Core\Injector\Injectable',
-        'SilverStripe\Core\Config\Configurable',
-        'SilverStripe\Core\Extensible'
-    ];
-    $rectorConfig->ruleWithConfiguration(
-        ParentClassToTraitsRector::class,
-        [
-            new ParentClassToTraits('Object', $object_traits),
-            new ParentClassToTraits('SS_Object', $object_traits),
-        ]
-    );
+    // pre 4.0
+//    $object_traits = [
+//        'SilverStripe\Core\Injector\Injectable',
+//        'SilverStripe\Core\Config\Configurable',
+//        'SilverStripe\Core\Extensible'
+//    ];
+//    $rectorConfig->ruleWithConfiguration(
+//        ParentClassToTraitsRector::class,
+//        [
+//            new ParentClassToTraits('Object', $object_traits),
+//            new ParentClassToTraits('SS_Object', $object_traits),
+//        ]
+//    );
 
 
     //4.0 https://docs.silverstripe.org/en/4/changelogs/4.0.0/#dataobject-versioned
